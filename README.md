@@ -21,16 +21,25 @@ This project allows you to:
 ## 📂 **Folder Structure**
 
 ```
-├── Lip_sync.ipynb         # Main Google Colab notebook
-├── README.md              # This file
-├── checkpoints/           # Pre-trained models (required for running)
-│   ├── latentsync_unet.pt
-│   └── whisper/tiny.pt
-├── configs/               # Model configurations (YAML)
-├── FirstVideo.mp4         # Example input video
-├── audio11.wav            # Example input audio
-└── result/                # Generated output video
+python -m scripts.inference \
+  --unet_config_path configs/unet/stage2.yaml \
+  --inference_ckpt_path checkpoints/latentsync_unet.pt \
+  --inference_steps 20 \
+  --guidance_scale 2.0 \
+  --video_path /path/to/input_video.mp4 \
+  --audio_path /path/to/input_audio.wav \
+  --video_out_path /path/to/output_video.mp4
+
 ```
+
+---
+
+
+📂 Requirements
+LatentSync UNet Checkpoint
+Whisper Tiny Checkpoint
+
+---
 
 
 ## ⚙️ **How to Run**

@@ -21,25 +21,35 @@ This project allows you to:
 ## 📂 **Folder Structure**
 
 ```
-python -m scripts.inference \
-  --unet_config_path configs/unet/stage2.yaml \
-  --inference_ckpt_path checkpoints/latentsync_unet.pt \
-  --inference_steps 20 \
-  --guidance_scale 2.0 \
-  --video_path /path/to/input_video.mp4 \
-  --audio_path /path/to/input_audio.wav \
-  --video_out_path /path/to/output_video.mp4
+LatentSync/
+├── Lip_sync.ipynb         # Main notebook for running inference
+├── README.md              # Project description and setup instructions
+├── checkpoints/           # Pre-trained models (e.g., latentsync_unet.pt, tiny.pt)
+│   ├── latentsync_unet.pt
+│   └── whisper/
+│       └── tiny.pt        # Whisper ASR model (required)
+├── configs/               # Model configuration YAML files
+├── scripts/               # Python scripts for inference
+│   └── inference.py       # Main inference script
+├── latentsync/            # LatentSync source code
+│   └── whisper/           # Whisper codebase (ASR feature extraction)
+├── FirstVideo.mp4         # Example input video (replace with your own)
+├── audio11.wav            # Example input audio (replace with your own)
+└── result/                # Generated output video (result.mp4)
+
 
 ```
 
 ---
 
+### 📂 Requirements
 
-📂 Requirements
-LatentSync UNet Checkpoint
-Whisper Tiny Checkpoint
+1. **LatentSync UNet Checkpoint**
+
+2. **Whisper Tiny Checkpoint**
 
 ---
+
 
 
 ## ⚙️ **How to Run**
